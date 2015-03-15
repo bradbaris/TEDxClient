@@ -3155,7 +3155,7 @@ a.subdued {
     overflow: hidden;
     margin: 0 10px;
     min-width: 30px;
-    height: 43px;
+    height: 100px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;

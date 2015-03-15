@@ -1,7 +1,6 @@
 angular.module('starter.controllers', [])
 
-
-.controller('EventsCtrl', function($scope, Events) {
+.controller('EventsCtrl', function($scope, $stateParams, Events) {
   $scope.events = Events.all();
   $scope.remove = function(event) {
     Events.remove(event);

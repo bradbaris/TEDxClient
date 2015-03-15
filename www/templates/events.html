@@ -1,4 +1,4 @@
-<ion-view view-title="Events">
+<ion-view>
   <ion-content class="padding">
 <!--     <div class="list list-inset">
       <label class="item item-input">
@@ -6,6 +6,8 @@
         <input type="text" ng-model="query" placeholder="Search">
       </label>
     </div> -->
+
+    <img src="../img/TEDxHonolulu.svg" />
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events | filter: query" type="item-text-wrap" href="#/events">
         <img ng-src="{{event.image}}">
