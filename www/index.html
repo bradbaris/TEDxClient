@@ -5,11 +5,6 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <!--
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-     -->
-
     <link href="css/ionic.app.css" rel="stylesheet">
 
     <!-- ionic/angularjs js -->
@@ -24,15 +19,14 @@
     <script src="js/services.js"></script>
   </head>
   <body ng-app="starter">
-    <ion-header-bar class="bar-assertive">
-      <div class="h1 title">TEDxHonolulu</div>
-      <button class="button button-icon icon ion-navicon"></button>
+    <ion-header-bar>
+      <!-- need to redo using ionic tags and scope.title -->
+      <img src="../img/TEDxHonolulu_w.svg" />
+      <button class="button button-icon icon ion-android-list"></button>
     </ion-header-bar>
-    <!--
-      The views will be rendered in the <ion-nav-view> directive below
-      Templates are in the /templates folder (but you could also
-      have templates inline in this html file if you'd like).
-    -->
-    <ion-nav-view></ion-nav-view>
+
+    <ion-nav-view>
+    </ion-nav-view>
+
   </body>
 </html>

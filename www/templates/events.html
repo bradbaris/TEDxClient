@@ -1,23 +1,46 @@
 <ion-view>
-  <ion-content class="padding">
-<!--     <div class="list list-inset">
+  <ion-content has-bouncing="false">
+
+
+    <!-- SEARCH BOX
+    <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon" ></i>
         <input type="text" ng-model="query" placeholder="Search">
       </label>
     </div> -->
 
-    <img src="../img/TEDxHonolulu.svg" />
-    <ion-list>
-    <!-- placeholder -->
-      <p>Hi there {{name}}</p>
-      <a href="#/agendas">Go to Agendas</a>
+    <!-- HERO IMAGE -->
+    <ion-item class="item-image">
+      <img src="../img/TEDxHonolulu_hero.jpg" />
+    </ion-item>
 
+    <!-- MAIN PAGE DESCRIP -->
+    <ion-content class="item">
+      <h1>Event Description for {{name}}</h1>
+
+      <!-- need to fix transition -->
+      <a href="#/agendas">Go to Agendas</a> -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit dolor architecto ullam minima numquam veritatis alias, ad accusamus, odit hic ipsum mollitia aut, modi itaque molestiae voluptate eos quidem consequatur.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit dolor architecto ullam minima numquam veritatis alias, ad accusamus, odit hic ipsum mollitia aut, modi itaque molestiae voluptate eos quidem consequatur.</p>
+    </ion-content>
+
+    <!-- GOOGLE MAP SNIPPET -->
+    <ion-item class="item-image">
+      <img src="../img/googlemap_placeholder.jpg" />
+    </ion-item>
+
+
+    <!-- AGENDA MANIFEST -->
+
+    <ion-list class="list inset-list">
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events | filter: query" type="item-text-wrap" href="#/events">
-        <img ng-src="{{event.image}}">
+        <!-- <img ng-src="{{event.image}}"> -->
+        <img src="../img/photo_placeholder.png">
         <h2>{{event.title}}</h2>
         <p>{{event.location}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+        <i class="icon ion-chevron-down icon-accessory"></i>
 
         <ion-option-button class="button-dark" ng-click="remove(event)">Delete</ion-option-button>
       </ion-item>

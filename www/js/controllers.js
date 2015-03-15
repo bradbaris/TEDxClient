@@ -9,7 +9,6 @@ angular.module('starter')
       $scope.events = result.data;
     });
 
-
   $scope.name = "Sarah";
   // $scope.remove = function(event) {
   //   Events.remove(event);
