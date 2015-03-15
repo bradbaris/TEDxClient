@@ -1,0 +1,37 @@
+<html ng-app="starter">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scale=1, user-scalable=no">
+  <title>accordion list</title>
+  <link href="css/style.css" rel="stylesheet">
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="js/app.js"></script>
+  <script src="cordova.js"></script> <!-- needed for cordova/phonegap -->
+
+
+</head>
+
+<!-- angular controller to initialize ng-repeat directive to create a new agenda item -->
+<body np-app="agenda" ng-controller="AgendaCtrl">
+
+  <ion-content>
+
+    <ion-list>
+      <div ng-repeat="agenda in agendas">
+        <ion-item class="item-stable"
+                ng-click="toggleAgenda(agenda)"
+                ng-class="{active: isAgendaShown(agenda)}">
+          <i class="icon" ng-class="isAgendaShown(agenda) ? 'ion-minus' : 'ion-plus'"></i>  
+        &nbsp;
+        Agenda {{agenda.name}} 
+      </ion-item>  
+      <ion-item class="item-accordion"
+                ng-repeat="item in agenda.items"
+                ng-show="isAgendaShown(agenda)">
+        {{item}}    
+      </ion-item>      
+      </div>  
+    </ion-list> 
+  </ion-content>      
+
+</body>
