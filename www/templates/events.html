@@ -2,14 +2,15 @@
   <ion-content>
     <ion-list>
     <!-- placeholder -->
-      <p>Hi there Sarah</p>
+      <p>Hi there {{name}}</p>
       <a href="#/agendas">Go to Agendas</a>
 
+      "{{events}}"
 
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events" type="item-text-wrap" href="#/tab/events/{{event.id}}">
-        <img ng-src="{{event.SOMETHING}}">
-        <h2>{{event.SOMETHING}}</h2>
-        <p>{{event.SOMETHING2}}</p>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events" type="item-text-wrap" href="#">
+        <!-- <img ng-src="{{event.SOMETHING}}"> -->
+        <h2>{{event.title}}</h2>
+        <!-- <p>{{event.SOMETHING2}}</p> -->
         <i class="icon ion-chevron-right icon-accessory"></i>
 
         <ion-option-button class="button-assertive" ng-click="remove(event)">
