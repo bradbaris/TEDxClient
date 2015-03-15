@@ -9,9 +9,13 @@
 
     <img src="../img/TEDxHonolulu.svg" />
     <ion-list>
+    <!-- placeholder -->
+      <p>Hi there {{name}}</p>
+      <a href="#/agendas">Go to Agendas</a>
+
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events | filter: query" type="item-text-wrap" href="#/events">
         <img ng-src="{{event.image}}">
-        <h2><b>{{event.title}}</b></h2>
+        <h2>{{event.title}}</h2>
         <p>{{event.location}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
