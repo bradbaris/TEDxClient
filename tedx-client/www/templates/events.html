@@ -1,0 +1,21 @@
+<ion-view view-title="Events">
+  <ion-content>
+    <ion-list>
+    <!-- placeholder -->
+      <p>Hi there Sarah</p>
+      <a href="#/agendas">Go to Agendas</a>
+
+
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events" type="item-text-wrap" href="#/tab/events/{{event.id}}">
+        <img ng-src="{{event.SOMETHING}}">
+        <h2>{{event.SOMETHING}}</h2>
+        <p>{{event.SOMETHING2}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(event)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
