@@ -1,20 +1,19 @@
 <ion-view view-title="Events">
-  <ion-content>
+  <ion-content class="padding">
+<!--     <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon" ></i>
+        <input type="text" ng-model="query" placeholder="Search">
+      </label>
+    </div> -->
     <ion-list>
-    <!-- placeholder -->
-      <p>Hi there Sarah</p>
-      <a href="#/agendas">Go to Agendas</a>
-
-
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events" type="item-text-wrap" href="#/tab/events/{{event.id}}">
-        <img ng-src="{{event.SOMETHING}}">
-        <h2>{{event.SOMETHING}}</h2>
-        <p>{{event.SOMETHING2}}</p>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events | filter: query" type="item-text-wrap" href="#/events">
+        <img ng-src="{{event.image}}">
+        <h2><b>{{event.title}}</b></h2>
+        <p>{{event.location}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
-        <ion-option-button class="button-assertive" ng-click="remove(event)">
-          Delete
-        </ion-option-button>
+        <ion-option-button class="button-dark" ng-click="remove(event)">Delete</ion-option-button>
       </ion-item>
     </ion-list>
   </ion-content>

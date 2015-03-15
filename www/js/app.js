@@ -31,12 +31,27 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   .state('events', {
     url: '/',
-    templateUrl: 'templates/events.html'
+    templateUrl: 'templates/events.html',
+    controller: 'EventsCtrl'
   })
   .state('agendas', {
     url: '/agendas',
-    templateUrl: 'templates/agendas.html'
+    templateUrl: 'templates/agendas.html',
+    controller: 'AgendaCtrl'
   });
+
+//EXAMPLE
+  // .state("tab.home",{
+  //   url:"/home",
+  //   views: {
+  //     'tab-home': {
+  //       templateUrl: "templates/tab-home.html",
+  //       controller: "HomeCtrl"
+  //     }
+  //   }
+  // })
+
+
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');

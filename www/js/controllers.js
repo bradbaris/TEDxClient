@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
 
 .controller('EventsCtrl', function($scope, Events) {
-  $scope.chats = Events.all();
+  $scope.events = Events.all();
   $scope.remove = function(event) {
     Events.remove(event);
   };
