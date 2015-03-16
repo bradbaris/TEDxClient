@@ -18,31 +18,43 @@
     <!-- MAIN PAGE DESCRIP -->
     <ion-content class="item">
       <h1>Event Description for {{name}}</h1>
+      <h3><a ui-sref="agendas">Test link goes to Agendas</a></h3>
 
       <!-- need to fix transition -->
-      <a href="#/agendas">Go to Agendas</a> -->
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit dolor architecto ullam minima numquam veritatis alias, ad accusamus, odit hic ipsum mollitia aut, modi itaque molestiae voluptate eos quidem consequatur.</p>
 
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit dolor architecto ullam minima numquam veritatis alias, ad accusamus, odit hic ipsum mollitia aut, modi itaque molestiae voluptate eos quidem consequatur.</p>
     </ion-content>
 
     <!-- GOOGLE MAP SNIPPET -->
-    <ion-item class="item-image">
-      <img src="../img/googlemap_placeholder.jpg" />
+    <ion-item class="item">
+      <iframe
+        width="100%"
+        height="200"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtcxg8NOJyBQfulWlRueh9pVMgNkj9lr0
+        &q=Manoa+Innovation+Center">
+      </iframe>
     </ion-item>
 
 
     <!-- AGENDA MANIFEST -->
 
     <ion-list class="list inset-list">
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events | filter: query" type="item-text-wrap" href="#/events">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events | filter: query" type="item-text-wrap" >
+      <!-- href="#/events" -->
         <!-- <img ng-src="{{event.image}}"> -->
         <img src="../img/photo_placeholder.png">
         <h2>{{event.title}}</h2>
         <p>{{event._id}}</p>
         <i class="icon ion-chevron-down icon-accessory"></i>
+        <div class="toggleVisible">
 
-        <ion-option-button class="button-dark" ng-click="remove(event)">Delete</ion-option-button>
+          <!-- enter agenda info, details, photos, mapp -->
+          
+          <a ui-sref="#/map/{{event._id}}">Go to Map</a> -->
+        </div>
+
       </ion-item>
     </ion-list>
   </ion-content>

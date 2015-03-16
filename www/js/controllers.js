@@ -1,7 +1,7 @@
 angular.module('starter')
 
-.controller('EventsCtrl', ['$scope', 'Events', function($scope, Events  ) {
-  $scope.events = undefined;  
+.controller('EventCtrl', ['$scope', 'Events', function( $scope, Events ) {
+  $scope.events = undefined;
   $scope.name = "Sarah";
 
   var callback = function (result) {
@@ -11,9 +11,14 @@ angular.module('starter')
 
   Events.list().then(callback);
 
-
 }])
 
 .controller('AgendaCtrl', function($scope, $stateParams, Events) {
   $scope.event = Events.get($stateParams.eventId);
+})
+
+.controller('MapCtrl', function($scope, $stateParams, Events) {
+
+  //put fullscreen map stuffs?
+
 });
