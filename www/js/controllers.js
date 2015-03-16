@@ -25,16 +25,17 @@ angular.module('starter')
 
 
 // define AgendaCtrl to make initialize ng-repeat
+// this will generate the agenda list and where data will be rendered
 .controller('AgendaCtrl', function($scope) {
    $scope.agendas = []; 
-   for(var i=0; i<5; i++){ 
+   for(var i=0; i<8; i++){ 
     // test index =5, use length later
     $scope.agendas[i] = {
-      name: i,
-      items: ['data']
+      // name: i,
+      items: ['data'] //GET method to populate data
     }; 
    } 
-   console.log("AgendaCtrl");
+   // console.log("AgendaCtrl");
 
 
 // conditional if a given agenda is the selected agenda, deselect it, else, select the given agenda
@@ -49,9 +50,9 @@ $scope.isAgendaShown = function(agenda){
   return $scope.shownAgenda === agenda;
   };
 
-})
-
-.controller('AgendaCtrl', function($scope, $stateParams, Events) {
-  $scope.event = Events.get($stateParams.eventId);
 });
+
+// .controller('AgendaCtrl', function($scope, $stateParams, Events) {
+//   $scope.event = Events.get($stateParams.eventId);
+// });
 
