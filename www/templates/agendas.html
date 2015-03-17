@@ -4,12 +4,32 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
+
 <ion-view view-title="{{event.title}}">
   <ion-content class="padding">
     <img ng-src="{{event.SOMETHINGPHOTO}}" style="width: 64px; height: 64px">
-    <p>
-    asdf asdfasdf
+    <body np-app="agenda" ng-controller="AgendaCtrl">
+    <h3>
+    TEDx Honolulu Event Agenda
       {{event.SOMETHINGEVENTDESCRIP}}
-    </p>
-  </ion-content>
+    </h3>
+     <ion-list>
+          <div ng-repeat="agenda in agendas">
+        <ion-item class="item-stable"
+                ng-click="toggleAgenda(agenda)"
+                ng-class="{active: isAgendaShown(agenda)}">
+          <i class="icon" ng-class="isAgendaShown(agenda) ? 'ion-minus' : 'ion-plus'"></i>  
+        &nbsp;
+        Agenda {{agenda.name}} 
+      </ion-item>  
+      <ion-item class="item-accordion"
+                ng-repeat="item in agenda.items"
+                ng-show="isAgendaShown(agenda)">
+        {{item}}    
+      </ion-item>      
+      </div>  
+    </ion-list> 
+ </ion-content>
 </ion-view>
+
+
