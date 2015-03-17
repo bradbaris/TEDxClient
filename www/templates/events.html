@@ -1,26 +1,56 @@
 <ion-view>
-  <ion-content class="padding">
-<!--     <div class="list list-inset">
+  <ion-content has-bouncing="false">
+
+
+    <!-- SEARCH BOX
+    <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon" ></i>
         <input type="text" ng-model="query" placeholder="Search">
       </label>
     </div> -->
 
-    <img src="../img/TEDxHonolulu.svg" />
-    <ion-list>
-    <!-- placeholder -->
-      <p>Hi there {{name}}</p>
-      <a href="#/agendas">Go to Agendas</a>
+    <!-- HERO IMAGE -->
+    <ion-item class="item-image">
+      <img src="../img/TEDxHonolulu_hero.jpg" />
+    </ion-item>
 
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events | filter: query" type="item-text-wrap" href="#/events">
-        <img ng-src="{{event.image}}">
-        <h2>{{event.title}}</h2>
-        <p>{{event.location}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+    <!-- MAIN PAGE DESCRIP -->
+    <ion-content class="item">
+      <h1>Event Description for {{name}}</h1>
 
-        <ion-option-button class="button-dark" ng-click="remove(event)">Delete</ion-option-button>
-      </ion-item>
-    </ion-list>
+      <!-- need to fix transition -->
+      <a href="#/agendas">Go to Agendas</a> -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit dolor architecto ullam minima numquam veritatis alias, ad accusamus, odit hic ipsum mollitia aut, modi itaque molestiae voluptate eos quidem consequatur.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit dolor architecto ullam minima numquam veritatis alias, ad accusamus, odit hic ipsum mollitia aut, modi itaque molestiae voluptate eos quidem consequatur.</p>
+    </ion-content>
+
+    <!-- GOOGLE MAP SNIPPET -->
+    <ion-item class="item-image">
+      <img src="../img/googlemap_placeholder.jpg" />
+    </ion-item>
+
+
+    <!-- AGENDA MANIFEST -->
+  <div np-app="agenda" ng-controller="AgendaCtrl">
+      <ion-list>
+        <div ng-repeat="agenda in agendas">
+          <ion-item class="item-stable"
+                ng-click="toggleAgenda(agenda)"
+                ng-class="{active: isAgendaShown(agenda)}">
+          <i class="icon" ng-class="isAgendaShown(agenda) ? 'ion-minus' : 'ion-plus'"></i>  
+        &nbsp;
+        Agenda {{agenda.name}} 
+      </ion-item>  
+      <ion-item class="item-accordion"
+                ng-repeat="item in agenda.items"
+                ng-show="isAgendaShown(agenda)">
+        {{item}}    
+      </ion-item>      
+      </div>  
+    </ion-list> 
+    </div>
   </ion-content>
-</ion-view>
+</ion-view>  
+

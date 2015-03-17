@@ -14,3 +14,9 @@ angular.module('starter')
   };
 
 }]);
+
+//The AgendaCtrl will pull the agenda data
+
+// .service('Agendas', ['$http', function ($http) {
+
+// }]);
