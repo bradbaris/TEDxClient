@@ -18,21 +18,28 @@
     <!-- MAIN PAGE DESCRIP -->
     <ion-content class="item">
       <h1>Event Description for {{name}}</h1>
+      <h3><a ui-sref="agendas">Test link goes to Agendas</a></h3>
 
       <!-- need to fix transition -->
-      <a href="#/agendas">Go to Agendas</a> -->
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit dolor architecto ullam minima numquam veritatis alias, ad accusamus, odit hic ipsum mollitia aut, modi itaque molestiae voluptate eos quidem consequatur.</p>
 
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit dolor architecto ullam minima numquam veritatis alias, ad accusamus, odit hic ipsum mollitia aut, modi itaque molestiae voluptate eos quidem consequatur.</p>
     </ion-content>
 
     <!-- GOOGLE MAP SNIPPET -->
-    <ion-item class="item-image">
-      <img src="../img/googlemap_placeholder.jpg" />
+    <ion-item class="item">
+      <iframe
+        width="100%"
+        height="200"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtcxg8NOJyBQfulWlRueh9pVMgNkj9lr0
+        &q=Manoa+Innovation+Center">
+      </iframe>
     </ion-item>
 
 
     <!-- AGENDA MANIFEST -->
+
   <div np-app="agenda" ng-controller="AgendaCtrl">
       <ion-list>
         <div ng-repeat="agenda in agendas">

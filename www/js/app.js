@@ -32,13 +32,19 @@ angular.module('starter', ['ionic'])
   .state('events', {
     url: '/',
     templateUrl: 'templates/events.html',
-    controller: 'EventsCtrl'
+    controller: 'EventCtrl'
   })
   .state('agendas', {
-    url: '/agendas',
+    url: '/agendas/:eventId',
     templateUrl: 'templates/agendas.html',
     controller: 'AgendaCtrl'
+  })
+  .state('map', {
+    url: '/map/:eventId',
+    templateUrl: 'templates/map.html',
+    controller: 'MapCtrl'
   });
+
 
 //EXAMPLE
   // .state("tab.home",{
@@ -50,8 +56,6 @@ angular.module('starter', ['ionic'])
   //     }
   //   }
   // })
-
-
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
