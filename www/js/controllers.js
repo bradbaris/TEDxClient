@@ -44,14 +44,7 @@ angular.module('starter')
     return $scope.shownAgenda === agenda;
   };
 
-});
-
-// .controller('AgendaCtrl', function($scope, $stateParams, Events) {
-//   $scope.event = Events.get($stateParams.eventId);
-// });
-
-
-
+})
 
 .controller('MapCtrl', function($scope, $stateParams, Events) {
 
