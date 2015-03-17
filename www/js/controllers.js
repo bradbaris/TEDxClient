@@ -14,6 +14,11 @@ angular.module('starter')
     console.log($scope.agendas);
   });
 
+  $scope.infobox = false;
+  $scope.toggleInfobox = function() {
+    $scope.infobox = $scope.infobox === false ? true: false;
+  };
+
 }])
 
 

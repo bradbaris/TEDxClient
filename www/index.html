@@ -12,6 +12,7 @@
      -->
 
     <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -25,9 +26,12 @@
     <script src="js/services.js"></script>
   </head>
   <body ng-app="starter">
-    <ion-header-bar class="bar-assertive">
-      <div class="h1 title">TEDxHonolulu</div>
-      <button class="button button-icon icon ion-navicon"></button>
+
+    <ion-header-bar>
+      <!-- need to redo using ionic tags and scope.title -->
+      <img src="../img/TEDxHonolulu_w.svg" />
+      <button class="button button-icon icon ion-android-list" ng-click="toggleInfobox=!toggleInfobox"></button>
+
     </ion-header-bar>
     <!--
       The views will be rendered in the <ion-nav-view> directive below
