@@ -1,10 +1,8 @@
 /* Accordion Styles */
 
 .list .item.item-accordion {
-  line-height: 38px;
-  padding-top: 0;
-  padding-bottom: 0;
-  transition: 0.09s all linear;
+  padding: 16px 74px;
+  transition: 0.09s all ease;
 }
 .list .item.item-accordion.ng-hide {
   line-height: 0px;
@@ -25,6 +23,10 @@
   color: #e62b1e;
 }
 
-.infobox {
-  display: none;
+.italic {
+  font-style: italic;
+}
+
+h2.bolder {
+  font-weight: 900;
 }
