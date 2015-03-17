@@ -40,22 +40,24 @@
 
     <!-- AGENDA MANIFEST -->
 
-    <ion-list class="list inset-list">
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events | filter: query" type="item-text-wrap" >
-      <!-- href="#/events" -->
-        <!-- <img ng-src="{{event.image}}"> -->
-        <img src="../img/photo_placeholder.png">
-        <h2>{{event.title}}</h2>
-        <p>{{event._id}}</p>
-        <i class="icon ion-chevron-down icon-accessory"></i>
-        <div class="toggleVisible">
-
-          <!-- enter agenda info, details, photos, mapp -->
-          
-          <a ui-sref="#/map/{{event._id}}">Go to Map</a> -->
-        </div>
-
-      </ion-item>
-    </ion-list>
+  <div np-app="agenda" ng-controller="AgendaCtrl">
+      <ion-list>
+        <div ng-repeat="agenda in agendas">
+          <ion-item class="item-stable"
+                ng-click="toggleAgenda(agenda)"
+                ng-class="{active: isAgendaShown(agenda)}">
+          <i class="icon" ng-class="isAgendaShown(agenda) ? 'ion-minus' : 'ion-plus'"></i>  
+        &nbsp;
+        Agenda {{agenda.name}} 
+      </ion-item>  
+      <ion-item class="item-accordion"
+                ng-repeat="item in agenda.items"
+                ng-show="isAgendaShown(agenda)">
+        {{item}}    
+      </ion-item>      
+      </div>  
+    </ion-list> 
+    </div>
   </ion-content>
-</ion-view>
+</ion-view>  
+
