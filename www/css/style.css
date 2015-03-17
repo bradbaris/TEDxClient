@@ -1,6 +1,4 @@
-
-
-
+/* Accordion Styles */
 
 .list .item.item-accordion {
   line-height: 38px;
@@ -16,7 +14,7 @@
   display: block !important;
 }
 
-/* Empty. Add your own CSS if you like */
+/* ETC styles */
 
 #map {
   width: 100%;
