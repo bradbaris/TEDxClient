@@ -17,13 +17,13 @@
 
     <!-- MAIN PAGE DESCRIP -->
     <ion-content class="item">
-      <h1>Event Description for {{name}}</h1>
+      <h1>{{event.title}}</h1>
       <h3><a ui-sref="agendas">Test link goes to Agendas</a></h3>
 
       <!-- need to fix transition -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit dolor architecto ullam minima numquam veritatis alias, ad accusamus, odit hic ipsum mollitia aut, modi itaque molestiae voluptate eos quidem consequatur.</p>
+      <p>{{event.date}}</p>
+      <p>{{event.location}}</p>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit dolor architecto ullam minima numquam veritatis alias, ad accusamus, odit hic ipsum mollitia aut, modi itaque molestiae voluptate eos quidem consequatur.</p>
     </ion-content>
 
     <!-- GOOGLE MAP SNIPPET -->
@@ -32,8 +32,7 @@
         width="100%"
         height="200"
         frameborder="0" style="border:0"
-        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtcxg8NOJyBQfulWlRueh9pVMgNkj9lr0
-        &q=Manoa+Innovation+Center">
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtcxg8NOJyBQfulWlRueh9pVMgNkj9lr0&q=Manoa+Innovation+Center">
       </iframe>
     </ion-item>
 
@@ -41,12 +40,15 @@
     <!-- AGENDA MANIFEST -->
 
     <ion-list class="list inset-list">
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events | filter: query" type="item-text-wrap" >
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="agenda in agendas | filter: query" type="item-text-wrap" >
       <!-- href="#/events" -->
         <!-- <img ng-src="{{event.image}}"> -->
         <img src="../img/photo_placeholder.png">
-        <h2>{{event.title}}</h2>
-        <p>{{event._id}}</p>
+        <h2>{{agenda.title}}</h2>
+        <p>{{agenda.date}}</p>
+        <p>{{agenda.start_time}} - {{agenda.end_time}}</p>
+        <p>{{agenda.speaker}}</p>
+        <p>{{agenda.description}}</p>
         <i class="icon ion-chevron-down icon-accessory"></i>
         <div class="toggleVisible">
 
