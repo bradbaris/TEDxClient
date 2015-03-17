@@ -36,8 +36,8 @@ angular.module('starter', ['ionic'])
   })
   .state('agendas', {
     url: '/agendas/:eventId',
-    templateUrl: 'templates/agendas.html',
-    controller: 'AgendaCtrl'
+    templateUrl: 'templates/events.html',
+    controller: 'EventCtrl'
   })
   .state('map', {
     url: '/map/:eventId',

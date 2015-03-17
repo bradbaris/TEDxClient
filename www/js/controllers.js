@@ -19,15 +19,6 @@ angular.module('starter')
     $scope.infobox = $scope.infobox === false ? true: false;
   };
 
-}])
-
-
-// creating an application with angular with ionic module
-
-
-// define AgendaCtrl to make initialize ng-repeat
-// this will generate the agenda list and where data will be rendered
-.controller('AgendaCtrl', function($scope) {
    $scope.agendas = []; 
    for(var i=0; i<8; i++){ 
     // test index =8, use length later
@@ -50,7 +41,15 @@ angular.module('starter')
     return $scope.shownAgenda === agenda;
   };
 
-})
+
+
+
+}])
+
+
+// creating an application with angular with ionic module
+
+
 
 .controller('MapCtrl', function($scope, $stateParams, Events) {
 
