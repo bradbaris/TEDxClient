@@ -11,6 +11,11 @@ angular.module('starter')
 
   Events.list().then(callback);
 
+  $scope.infobox = false;
+  $scope.toggleInfobox = function() {
+    $scope.infobox = $scope.infobox === false ? true: false;
+  };
+
 }])
 
 .controller('AgendaCtrl', function($scope, $stateParams, Events) {

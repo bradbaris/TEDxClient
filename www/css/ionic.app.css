@@ -2565,7 +2565,7 @@ body, .ionic-body {
   color: #000;
   word-wrap: break-word;
   font-size: 14px;
-  font-family: "Helvetica Neue", "Roboto", sans-serif;
+  font-family: "Helvetica Neue", "Roboto", "Helvetica", "Arial", sans-serif;
   line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
@@ -2790,7 +2790,7 @@ cite {
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
-  font-weight: 500;
+  font-weight: 900;
   font-family: "Helvetica Neue", "Roboto", sans-serif;
   line-height: 1.2; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
@@ -2813,7 +2813,7 @@ h1, .h1 {
   font-size: 36px; }
 
 h2, .h2 {
-  font-size: 30px; }
+  font-size: 32px; }
 
 h3, .h3 {
   font-size: 24px; }
@@ -4640,7 +4640,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   font-size: 16px; }
   .item h2 {
     margin: 0 0 2px 0;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: normal; }
   .item h3 {
     margin: 0 0 4px 0;
@@ -4749,8 +4749,8 @@ ion-tabs.tabs-color-active-dark .tab-item {
 .item, .item h1, .item h2, .item h3, .item h4, .item h5, .item h6, .item p, .item-content, .item-content h1, .item-content h2, .item-content h3, .item-content h4, .item-content h5, .item-content h6, .item-content p {
   /*overflow: hidden;*/
   /*text-overflow: ellipsis;*/
-  white-space: nowrap; 
-  word-break: break-all;
+  /*white-space: nowrap; */
+  /*word-break: break-all;*/
   }
 
 a.item {
