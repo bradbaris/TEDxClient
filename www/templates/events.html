@@ -53,7 +53,7 @@
                 ng-class="{active: isAgendaShown(agenda)}">
           <i class="icon" ng-class="isAgendaShown(agenda) ? 'ion-minus' : 'ion-plus'"></i>  
         &nbsp;
-        Agenda {{agenda.name}} 
+        {{agenda.title}} 
       </ion-item>  
       <ion-item class="item-accordion"
                 ng-repeat="item in agenda.items"
