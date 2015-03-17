@@ -7,14 +7,15 @@ angular.module('starter')
   };
 
   this.get = function (id) {
-    return $http.get('https://floating-woodland-2582.herokuapp.com/api/events'+id);
+    // return $http.get('https://floating-woodland-2582.herokuapp.com/api/events/'+id);
+    return $http.get('/fakeevent.json');
   };
 
+}])
 
+.service('Agendas', ['$http', function ($http) {
+  this.list = function () {
+    return $http.get('https://floating-woodland-2582.herokuapp.com/api/agendas');
+  };
 }]);
 
-//The AgendaCtrl will pull the agenda data
-
-// .service('Agendas', ['$http', function ($http) {
-
-// }]);

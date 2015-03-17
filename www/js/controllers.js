@@ -1,17 +1,18 @@
 angular.module('starter')
 
 
-.controller('EventCtrl', ['$scope', 'Events', function( $scope, Events ) {
-  $scope.events = undefined;
+.controller('EventCtrl', ['$scope', 'Events', 'Agendas', function( $scope, Events, Agendas ) {
 
-  $scope.name = "Sarah";
+  // Events.list().success(callback);
+  Events.get("55075690e4b018f3e291f7c1").success(function (data) {
+    $scope.event = data;
+    console.log($scope.event);
+  });
 
-  var callback = function (result) {
-    $scope.events = result.data;
-    console.log($scope.events);
-  };
-
-  Events.list().then(callback);
+  Agendas.list().success(function (data) {
+    $scope.agendas = data;
+    console.log($scope.agendas);
+  });
 
 }])
 
