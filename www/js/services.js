@@ -8,7 +8,7 @@ angular.module('starter')
 
   this.get = function (id) {
     // return $http.get('https://floating-woodland-2582.herokuapp.com/api/events/'+id);
-    return $http.get('/fakeevent.json');
+    return $http.get('https://floating-woodland-2582.herokuapp.com/api/events');
   };
 
 }])
