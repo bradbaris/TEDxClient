@@ -1,4 +1,4 @@
-<ion-view>
+<ion-view ng-controller="EventCtrl">
   <ion-content has-bouncing="false">
 
 
@@ -10,25 +10,42 @@
       </label>
     </div> -->
 
-    <!-- INFO PANEL -->
-    <ion-item class="item">
-      CONTACT/HISTORY/ABOUT/INFO PANE<br />
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae sapiente sint minima perferendis, accusamus, repellat, consequatur ipsum excepturi voluptates esse tempora ipsam. Reiciendis sed temporibus odio praesentium molestiae enim, non.
-    </ion-item>
-
     <!-- HERO IMAGE -->
     <ion-item class="item-image">
-      <img src="../img/TEDxHonolulu_hero_FPO.jpg" />
+      <img src="img/TEDxHonolulu_hero_FPO.jpg" />
     </ion-item>
 
     <!-- MAIN PAGE DESCRIP -->
-    <ion-item class="item">
-      <h1><span class="red">TED<sup>x</sup></span>Honolulu 2015: <span class="italic">Paradigm Shift</span></h1>
 
-      <h2><b>{{event.date}} &bull; {{event.start_time}} - {{event.end_time}}</b></h2>
-      <h2>{{event.location}}</h2>
-      <p>{{event.description}}</p>
-    </ion-item>
+    <ion-list >
+  
+      <ion-item class="item">
+        <h1><span class="red">TED<sup>x</sup></span>Honolulu 2015: <span class="italic">Paradigm Shift</span></h1>
+
+        <h2><b>{{shown_event.date}} &bull; {{shown_event.start_time}} - {{shown_event.end_time}}</b></h2>
+        <h2>{{shown_event.location}}</h2>
+        <p>{{shown_event.description}}</p>
+      </ion-item>
+
+      <div ng-repeat="event in events">
+        <ion-item
+          class="item-remove-animate item-avatar item-icon-right"
+          ng-click="toggleEvent(event)" ng-class="{active: isAgendaShown(event)}">
+
+          <img src="img/photo_placeholder.png">
+          <h2 class="bolder">{{event.title}}</h2>
+         
+          <i class="icon icon-accessory" ng-class="isAgendaShown(event) ? 'ion-chevron-up' : 'ion-chevron-down'"></i>  
+        </ion-item>
+        
+        <ion-item class="item-accordion" ng-show="isAgendaShown(event)">
+          <h1>{{event.date}} <sup class="red">&times;</sup> {{event.start_time}} - {{event.end_time}}</h1>
+          <h2 class="red">{{event.speaker}}</h2>
+          <p>{{event.description}}</p>
+        </ion-item>
+      </div>
+    </ion-list>
+
 
     <!-- GOOGLE MAP SNIPPET -->
     <ion-item class="item">
@@ -42,13 +59,19 @@
 
 
     <!-- AGENDA MANIFEST -->
-    <ion-list np-app="agenda" ng-controller="EventCtrl">
+
+    <ion-list ng-app="agenda" ng-controller="EventCtrl">
+
+
+
+    <ion-list>
+
       <div ng-repeat="agenda in agendas">
         <ion-item 
           class="item-remove-animate item-avatar item-icon-right"
           ng-click="toggleAgenda(agenda)" ng-class="{active: isAgendaShown(agenda)}">
 
-          <img src="../img/photo_placeholder.png">
+          <img src="img/photo_placeholder.png">
           <h2 class="bolder">{{agenda.title}}</h2>
          
           <i class="icon icon-accessory" ng-class="isAgendaShown(agenda) ? 'ion-chevron-up' : 'ion-chevron-down'"></i>  
