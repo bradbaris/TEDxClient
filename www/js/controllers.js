@@ -16,25 +16,14 @@ angular.module('starter')
 
   Agendas.list().success(function (data) {
     $scope.all_agendas = data;
-
+    // console.log("string", $scope.all_agendas.start_time);
     $scope.agendas = data.filter(function(val) {
       return (val.event_id === $scope.shown_event._id);
     });
-    // console.log("agendas ", $scope.agendas);
+
+    console.log("string", $scope.agendas[1].start_time);
+    console.log("moment", moment().hour($scope.agendas[1].start_time));
   });
-
-  // $scope.infobox = false;
-  //   $scope.toggleInfobox = function() {
-  //   $scope.infobox = $scope.infobox === false ? true: false;
-  // };
-
-  //  $scope.agendas = []; 
-  //  for(var i=0; i<2; i++){ 
-  //   // test index =8, use length later
-  //   $scope.agendas[i] = {
-  //     items: ['data'] //GET method to populate data
-  //   }; 
-  //  } 
 
 // conditional if a given agenda is the selected agenda, deselect it, else, select the given agenda
   $scope.toggleAgenda = function(agenda){
@@ -46,28 +35,10 @@ angular.module('starter')
   };
   
   $scope.toggleEvent = function(event) {
-    // if($scope.isEventShown(agenda)){
-    //   $scope.shownAgenda = null;
-    // } else {
-    //   $scope.shownAgenda = agenda;
-    // }
-    // console.log($scope.shown_event);
-
-    // if($scope.isAgendaShown(event)){
-    //   $scope.shownAgenda = null;
-    // } else {
-    //   $scope.shownAgenda = event;
-    // }
-
-
     $scope.shown_event = event;
-    // console.log($scope.shown_event);
-
     $scope.agendas = $scope.all_agendas.filter(function(val) {
       return (val.event_id === $scope.shown_event._id);
     });
-
-    // console.log($scope.agendas);
 
   };
 

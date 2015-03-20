@@ -55,8 +55,12 @@
 
     <!-- AGENDA MANIFEST -->
 
+    <ion-list ng-app="agenda" ng-controller="EventCtrl">
+
+
 
     <ion-list>
+
       <div ng-repeat="agenda in agendas">
 
         <ion-item class="list card" ng-click="toggleAgenda(agenda)" ng-class="{active: isAgendaShown(agenda)}">
