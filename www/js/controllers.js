@@ -5,25 +5,28 @@ angular.module('starter')
 
   // Events.list().success(callback);
   Events.get().success(function (data) {
-    console.log(data);
     $scope.events = data;
 
     $scope.shown_event = data.filter(function (val) {
       return val._id === "55075690e4b018f3e291f7c1";
     })[0];
-    console.log($scope.shown_event);
   });
 
   Agendas.list().success(function (data) {
+    data = data.map(function(val) {
+      var result = val;
+       result.timestamp = Date.parse(val.date + " " + val.start_time);
+    
+      return result;
+    });
+
     $scope.all_agendas = data;
-    // console.log("string", $scope.all_agendas.start_time);
+     
     $scope.agendas = data.filter(function(val) {
       return (val.event_id === $scope.shown_event._id);
     });
-    console.log("string", $scope.agendas[1].start_time);
-    console.log("moment", moment().hour($scope.agendas[1].start_time));
-  });
 
+  });
  
 
 // conditional if a given agenda is the selected agenda, deselect it, else, select the given agenda
