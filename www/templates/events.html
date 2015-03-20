@@ -1,8 +1,7 @@
 <ion-view ng-controller="EventCtrl">
   <ion-content has-bouncing="false">
 
-
-<!-- SEARCH BOX
+    <!-- SEARCH BOX
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon" ></i>
@@ -17,33 +16,29 @@
 
     <!-- MAIN PAGE DESCRIP -->
 
-    <ion-list >
-  
-      <ion-item class="item">
-        <h1><span class="red">TED<sup>x</sup></span>Honolulu 2015: <span class="italic">Paradigm Shift</span></h1>
-
-        <h2><b>{{shown_event.date}} &bull; {{shown_event.start_time}} - {{shown_event.end_time}}</b></h2>
-        <h2>{{shown_event.location}}</h2>
-        <p>{{shown_event.description}}</p>
-      </ion-item>
-
-      <div ng-repeat="event in events">
-        <ion-item
-          class="item-remove-animate item-avatar item-icon-right"
+    <ion-list>
+      <ion-item ng-repeat="event in events" class="item">
+        <div
+          class="item-icon-right item-accordion"
           ng-click="toggleEvent(event)" ng-class="{active: isAgendaShown(event)}">
 
-          <img src="img/photo_placeholder.png">
-          <h2 class="bolder">{{event.title}}</h2>
-         
+          <h1 ng-bind-html="event.title | parseTedX">
+            <!--baller move -->
+          </h1>
+  
+          <h2 class="red bolder">{{event.start_time}} - {{event.end_time}}</h2>
+          <h2 ng-bind-html="event.description | parseTedX"></h2>
+
           <i class="icon icon-accessory" ng-class="isAgendaShown(event) ? 'ion-chevron-up' : 'ion-chevron-down'"></i>  
-        </ion-item>
-        
-        <ion-item class="item-accordion" ng-show="isAgendaShown(event)">
-          <h1>{{event.date}} <sup class="red">&times;</sup> {{event.start_time}} - {{event.end_time}}</h1>
+        </div>
+
+        <div ng-show="isAgendaShown(event)">
+          <h1>{{event.start_time}} - {{event.end_time}}</h1>
+          <h2>{{shown_event.location}}</h2>
           <h2 class="red">{{event.speaker}}</h2>
           <p>{{event.description}}</p>
-        </ion-item>
-      </div>
+        </div>
+      </ion-item>
     </ion-list>
 
 
@@ -51,7 +46,7 @@
     <ion-item class="item">
       <iframe
         width="100%"
-        height="200"
+        height="300"
         frameborder="0" style="border:0"
         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtcxg8NOJyBQfulWlRueh9pVMgNkj9lr0&q=Manoa+Innovation+Center">
       </iframe>
@@ -63,24 +58,42 @@
 
     <ion-list>
       <div ng-repeat="agenda in agendas">
-        <ion-item 
-          class="item-remove-animate item-avatar item-icon-right"
-          ng-click="toggleAgenda(agenda)" ng-class="{active: isAgendaShown(agenda)}">
 
-          <img src="img/photo_placeholder.png">
-          <h2 class="bolder">{{agenda.title}}</h2>
-         
-          <i class="icon icon-accessory" ng-class="isAgendaShown(agenda) ? 'ion-chevron-up' : 'ion-chevron-down'"></i>  
+        <ion-item class="list card" ng-click="toggleAgenda(agenda)" ng-class="{active: isAgendaShown(agenda)}">
+
+          <div class="item item-avatar item-icon-right">
+            <img src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
+            <h2 class="bolder">{{agenda.title}}</h2>
+            <h3 class="red">{{shown_event.start_time}} - {{shown_event.end_time}}</h3>
+            <i class="icon icon-accessory" ng-class="isAgendaShown(agenda) ? 'ion-chevron-up' : 'ion-chevron-down'"></i>
+          </div>
+
+          <div class="item-accordion item item-body" ng-show="isAgendaShown(agenda)">
+            <img class="full-image" src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
+            <h1>{{agenda.start_time}} - {{agenda.end_time}}</h1>
+            <h2 class="red">{{agenda.speaker}}</h2>
+            <p>{{agenda.description}}</p>
+          </div>
+
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#">
+              <i class="icon ion-thumbsup"></i>
+              Like
+            </a>
+            <a class="tab-item" href="#">
+              <i class="icon ion-chatbox"></i>
+              Comment
+            </a>
+            <a class="tab-item" href="#">
+              <i class="icon ion-share"></i>
+              Share
+            </a>
+          </div>
         </ion-item>
-        
-        <ion-item class="item-accordion" ng-show="isAgendaShown(agenda)">
-          <h1>{{agenda.date}} <sup class="red">&times;</sup> {{agenda.start_time}} - {{agenda.end_time}}</h1>
-          <h2 class="red">{{agenda.speaker}}</h2>
-          <p>{{agenda.description}}</p>
-        </ion-item>
+
       </div>
     </ion-list>
 
   </ion-content>
-</ion-view>  
+</ion-view>
 

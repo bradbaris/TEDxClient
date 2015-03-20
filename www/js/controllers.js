@@ -5,13 +5,13 @@ angular.module('starter')
 
   // Events.list().success(callback);
   Events.get().success(function (data) {
-    console.log(data);
+    // console.log("Events ", data);
     $scope.events = data;
 
     $scope.shown_event = data.filter(function (val) {
       return val._id === "55075690e4b018f3e291f7c1";
     })[0];
-    console.log($scope.shown_event);
+    // console.log($scope.shown_event);
   });
 
   Agendas.list().success(function (data) {
@@ -20,22 +20,21 @@ angular.module('starter')
     $scope.agendas = data.filter(function(val) {
       return (val.event_id === $scope.shown_event._id);
     });
-    console.log($scope.agendas);
+    // console.log("agendas ", $scope.agendas);
   });
 
-  $scope.infobox = false;
-    $scope.toggleInfobox = function() {
-    $scope.infobox = $scope.infobox === false ? true: false;
-  };
+  // $scope.infobox = false;
+  //   $scope.toggleInfobox = function() {
+  //   $scope.infobox = $scope.infobox === false ? true: false;
+  // };
 
-   $scope.agendas = []; 
-   for(var i=0; i<2; i++){ 
-    // test index =8, use length later
-    $scope.agendas[i] = {
-      items: ['data'] //GET method to populate data
-    }; 
-   } 
-
+  //  $scope.agendas = []; 
+  //  for(var i=0; i<2; i++){ 
+  //   // test index =8, use length later
+  //   $scope.agendas[i] = {
+  //     items: ['data'] //GET method to populate data
+  //   }; 
+  //  } 
 
 // conditional if a given agenda is the selected agenda, deselect it, else, select the given agenda
   $scope.toggleAgenda = function(agenda){
@@ -68,25 +67,17 @@ angular.module('starter')
       return (val.event_id === $scope.shown_event._id);
     });
 
-    console.log($scope.agendas);
+    // console.log($scope.agendas);
 
-
-
-  }
+  };
 
   $scope.isAgendaShown = function(agenda){
     return $scope.shownAgenda === agenda;
   };
 
-
-
-
 }])
 
-
 // creating an application with angular with ionic module
-
-
 
 .controller('MapCtrl', function($scope, $stateParams, Events) {
 
