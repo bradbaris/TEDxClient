@@ -1,0 +1,93 @@
+<ion-view ng-controller="EventCtrl">
+  <ion-content has-bouncing="false">
+
+    <!-- HERO IMAGE -->
+    <ion-item class="item-image">
+      <img src="img/TEDxHonolulu_hero_FPO.jpg" />
+    </ion-item>
+
+    <!-- MAIN PAGE DESCRIP -->
+
+    <ion-list>
+      <div ng-repeat="event in events">
+        <ion-item>
+
+          <div class="item-accordion item-body" ng-click="toggleEvent(event)" ng-class="{active: isAgendaShown(event)}">
+
+            <h1 ng-bind-html="event.title | parseTedX">
+              <!--baller move -->
+            </h1>
+
+            <h2 class="red bolder">{{event.start_date | amDateFormat:'dddd, MMMM Do'}} &bull; {{event.start_time}} - {{event.end_time}}</h2>
+            <h2 ng-bind-html="event.description | parseTedX"></h2>
+          </div>
+
+          <div class="item-accordion" ng-show="isAgendaShown(event)">
+            <h1>{{event.date}} <sup class="red">&times;</sup> {{event.start_time}} - {{event.end_time}}</h1>
+            <h2 class="red">{{event.speaker}}</h2>
+            <p>{{event.description}}</p>
+          </div>
+        </ion-item>
+
+
+        <!-- GOOGLE MAP SNIPPET -->
+        <ion-item id="#map" class="item-image">
+          <a ng-bind-himtl-unsafe="" href="geo:{{event.lat}},{{event.lng}}">
+            <img src="https://maps.googleapis.com/maps/api/staticmap?center={{event.lat}},{{event.lng}}&size=700x300&scale=2&zoom=17&markers=icon:http://tedx.devleague.com/img/tedxmap.png|color:red|{{event.lat}},{{event.lng}}" />
+          </a>
+        </ion-item>
+      </div>
+    </ion-list>
+
+<!--    <iframe
+        width="100%"
+        height="300"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtcxg8NOJyBQfulWlRueh9pVMgNkj9lr0&q=Manoa+Innovation+Center">
+      </iframe> -->
+
+
+    <!-- AGENDA MANIFEST -->
+
+    <ion-list>
+
+      <div ng-repeat="agenda in agendas | orderBy: 'timestamp'">
+
+        <div class="list card" ng-click="toggleAgenda(agenda)" ng-class="{active: isAgendaShown(agenda)}">
+
+          <div class="item-avatar item ">
+
+            <img src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
+
+            <h2 class="bolder" ng-bind-html="agenda.title | parseTedX"> {{agenda.start_time}}</h2>
+            <h3 class="red">{{agenda.date | amDateFormat:'dddd, MMMM Do'}} &bull; {{shown_event.start_time}} - {{shown_event.end_time}}</h3>
+            <!-- <i class="icon icon-accessory" ng-class="isAgendaShown(agenda) ? 'ion-close' : 'ion-chevron-down'"></i> -->
+          </div>
+
+          <div class="item-body" ng-show="isAgendaShown(agenda)">
+            <img class="full-image" src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
+            <h1>{{agenda.date | amDateFormat:'dddd, MMMM Do'}} <sup class="red">&times;</sup> {{agenda.start_time}} - {{agenda.end_time}}</h1>
+            <h2 class="red">{{agenda.speaker}}</h2>
+            <p ng-bind-html="agenda.description | parseTedX"></p>
+          </div>
+
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="maps:?q={{agenda.location}}">
+              <i class="icon ion-android-globe"></i>
+              View Map
+            </a>
+
+            <a class="tab-item" href="#">
+              <i class="icon ion-share"></i>
+              Share Link
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </ion-list>
+
+  </ion-content>
+</ion-view>
+

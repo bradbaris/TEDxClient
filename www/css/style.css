@@ -1,1 +1,33 @@
-/* Empty. Add your own CSS if you like */
+/* Accordion Styles */
+
+.list .item.item-accordion {
+  padding: 16px 74px;
+  transition: 0.09s all ease;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+/* ETC styles */
+
+#map {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.red {
+  color: #e62b1e;
+}
+
+.italic {
+  font-style: italic;
+}
+
+h2.bolder {
+  font-weight: 900;
+}

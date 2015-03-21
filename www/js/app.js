@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'angularMoment'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,64 +20,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   });
 })
-
+.config( [
+  '$compileProvider',
+  function( $compileProvider ) {
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|geo):/);
+    // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
+  }
+])
 .config(function($stateProvider, $urlRouterProvider) {
 
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
   $stateProvider
-
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: "/tab",
-    abstract: true,
-    templateUrl: "templates/tabs.html"
+  .state('events', {
+    url: '/',
+    templateUrl: 'templates/events.html',
+    controller: 'EventCtrl'
   })
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
+  .state('agendas', {
+    url: '/agendas/:eventId',
+    templateUrl: 'templates/events.html',
+    controller: 'EventCtrl'
   })
-
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
+  .state('map', {
+    url: '/map/:eventId',
+    templateUrl: 'templates/map.html',
+    controller: 'MapCtrl'
   });
 
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/');
 
 });

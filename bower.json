@@ -1,7 +1,25 @@
 {
   "name": "tedx-client",
-  "private": "true",
+  "private": true,
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.0.0-rc.0"
-  }
+  },
+  "dependencies": {
+    "moment": "~2.9.0",
+    "angular-momentjs": "~0.1.9"
+  },
+  "version": "0.0.0",
+  "homepage": "https://github.com/devleague/tedx-client",
+  "authors": [
+    "Bradford Baris"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ]
 }
