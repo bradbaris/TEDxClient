@@ -20,11 +20,13 @@ angular.module('starter')
         return result;
       });
 
-      $scope.all_agendas = data;
+      $scope.agendas = data;
+      // $scope.all_agendas = data;
 
-      $scope.agendas = data.filter(function(val) {
-        return (val.event_id === $scope.shown_event._id);
-      });
+      // $scope.agendas = data.filter(function(val) {
+      //   console.log($scope.shown_event);
+      //   return (val.event_id === $scope.shown_event._id);
+      // });
 
     });
 
@@ -48,12 +50,4 @@ angular.module('starter')
       return $scope.shownAgenda === agenda;
     };
 
-  }])
-
-  // creating an application with angular with ionic module
-
-  .controller('MapCtrl', function($scope, $stateParams, Events) {
-
-    //put fullscreen map stuffs?
-
-  });
+  }]);
