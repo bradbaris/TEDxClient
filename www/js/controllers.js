@@ -20,13 +20,12 @@ angular.module('starter')
         return result;
       });
 
-      $scope.agendas = data;
-      // $scope.all_agendas = data;
+      // $scope.agendas = data;
+      $scope.all_agendas = data;
 
-      // $scope.agendas = data.filter(function(val) {
-      //   console.log($scope.shown_event);
-      //   return (val.event_id === $scope.shown_event._id);
-      // });
+      $scope.agendas = data.filter(function(val) {
+        return (val.event_id === $scope.shown_event._id);
+      });
 
     });
 
