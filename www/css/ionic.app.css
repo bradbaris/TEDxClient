@@ -7132,7 +7132,7 @@ a.button {
 /* will trigger the flex-direction to */
 /* change to column and add some margin */
 /* to any columns in the row for clearity */
-@media (max-width: 567px) {
+/*@media (max-width: 567px) {
   .responsive-sm {
     -webkit-box-direction: normal;
     -moz-box-direction: normal;
@@ -7194,7 +7194,7 @@ a.button {
       margin-left: 0;
       max-width: 100%;
       width: 100%; } }
-
+*/
 /**
  * Utility Classes
  * --------------------------------------------------
