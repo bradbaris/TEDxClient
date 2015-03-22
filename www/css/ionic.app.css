@@ -2301,6 +2301,7 @@ script {
  *  user zoom.
  */
 html {
+  background-color: #d9d9d9;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2564,9 +2565,9 @@ body, .ionic-body {
   padding: 0;
   color: #000;
   word-wrap: break-word;
-  font-size: 14px;
-  font-family: "Helvetica Neue", "Roboto", "Helvetica", "Arial", sans-serif;
-  line-height: 20px;
+  font-size: 15px;
+  font-family: "Merriweather", "Helvetica Neue", "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 24px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
   -webkit-user-drag: none;
@@ -4652,8 +4653,9 @@ ion-tabs.tabs-color-active-dark .tab-item {
     margin: 0 0 3px 0;
     font-size: 12px; }
   .item p {
-    color: #666;
-    font-size: 14px;
+    color: #555;
+    font-size: 18px;
+    line-height: 26px;
     margin-bottom: 2px; }
   .item h1:last-child, .item h2:last-child, .item h3:last-child, .item h4:last-child, .item h5:last-child, .item h6:last-child, .item p:last-child {
     margin-bottom: 0; }
@@ -7131,7 +7133,7 @@ a.button {
 /* will trigger the flex-direction to */
 /* change to column and add some margin */
 /* to any columns in the row for clearity */
-@media (max-width: 567px) {
+/*@media (max-width: 567px) {
   .responsive-sm {
     -webkit-box-direction: normal;
     -moz-box-direction: normal;
@@ -7193,6 +7195,7 @@ a.button {
       margin-left: 0;
       max-width: 100%;
       width: 100%; } }
+*/
 
 /**
  * Utility Classes
