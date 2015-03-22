@@ -31,3 +31,13 @@
 h2.bolder {
   font-weight: 900;
 }
+
+h3.bolder{
+  font-weight: normal;
+}
+
+p.contact{
+  font-size: 22px;
+  font-weight: normal;
+  color: #000000;
+}
