@@ -2301,6 +2301,7 @@ script {
  *  user zoom.
  */
 html {
+  background-color: #d9d9d9;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -7131,7 +7132,7 @@ a.button {
 /* will trigger the flex-direction to */
 /* change to column and add some margin */
 /* to any columns in the row for clearity */
-@media (max-width: 567px) {
+/*@media (max-width: 567px) {
   .responsive-sm {
     -webkit-box-direction: normal;
     -moz-box-direction: normal;
@@ -7192,7 +7193,7 @@ a.button {
       margin-bottom: 15px;
       margin-left: 0;
       max-width: 100%;
-      width: 100%; } }
+      width: 100%; } }*/
 
 /**
  * Utility Classes
