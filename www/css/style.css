@@ -40,3 +40,13 @@ h3.bolder{
   font-weight: normal;
 }
 
+p.contact{
+  font-size: 22px;
+  font-weight: normal;
+  color: #000000;
+}
+
+p{
+  font-size: 22px;
+  line-height: 1.3;
+}
