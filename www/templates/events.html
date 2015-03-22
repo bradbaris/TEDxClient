@@ -15,18 +15,19 @@
           <div class="item-accordion item-body" ng-click="toggleEvent(event)" ng-class="{active: isAgendaShown(event)}">
 
             <h1 ng-bind-html="event.title | parseTedX">
-              <!--baller move -->
             </h1>
 
             <h2 class="red bolder">{{event.start_date | amDateFormat:'dddd, MMMM Do'}} &bull; {{event.start_time}} - {{event.end_time}}</h2>
-            <h2 ng-bind-html="event.description | parseTedX"></h2>
-            <p class="contact"><b>Contact</b></p>
-            <p class="contact">{{event.eventOrganizer}}</p>
-            <p class="contact">{{event.email}}</p>
-            <p class="contact">{{event.phone}}</p>
 
+            <p class="black" ng-bind-html="event.description | parseTedX">
+              <p><b>Contact</b></p>
+              <p>{{event.eventOrganizer}}</p>
+              <p>{{event.email}}</p>
+              <p>{{event.phone}}</p>
+            </p>
           </div>
 
+          <!-- for future EVENTS (>1 event) -->
           <!-- <div class="item-accordion" ng-show="isAgendaShown(event)">
             <h1>{{event.date}} <sup class="red">&times;</sup> {{event.start_time}} - {{event.end_time}}</h1>
             <h2 class="red">{{event.speaker}}</h2>
@@ -37,13 +38,14 @@
 
         <!-- GOOGLE MAP SNIPPET -->
         <ion-item id="#map" class="item-image">
-          <a ng-bind-himtl-unsafe="" href="geo:{{event.lat}},{{event.lng}}">
-            <img src="https://maps.googleapis.com/maps/api/staticmap?center={{event.lat}},{{event.lng}}&size=700x300&scale=2&zoom=17&markers=icon:http://tedx.devleague.com/img/tedxmap.png|color:red|{{event.lat}},{{event.lng}}" />
+          <a ng-bind-himtl-unsafe="" href="map:{{event.lat}},{{event.lng}}">
+            <img src="https://maps.googleapis.com/maps/api/staticmap?center={{event.lat}},{{event.lng}}&size=640x200&zoom=17&markers=icon:http://tedx.devleague.com/img/tedxmap.png|color:red|{{event.lat}},{{event.lng}}" />
           </a>
         </ion-item>
       </div>
     </ion-list>
 
+        <!-- GOOGLE MAP EMBED API (unused) -->
 <!--    <iframe
         width="100%"
         height="300"
@@ -60,7 +62,7 @@
 
         <div class="list card" ng-click="toggleAgenda(agenda)" ng-class="{active: isAgendaShown(agenda)}">
 
-          <div class="item-avatar item ">
+          <div class="item-avatar item item-icon-right">
 
             <img src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
 
