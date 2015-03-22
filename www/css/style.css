@@ -24,6 +24,10 @@
   color: #e62b1e;
 }
 
+.black {
+  color: #000;
+}
+
 .italic {
   font-style: italic;
 }
@@ -36,8 +40,3 @@ h3.bolder{
   font-weight: normal;
 }
 
-p.contact{
-  font-size: 22px;
-  font-weight: normal;
-  color: #000000;
-}
