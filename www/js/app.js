@@ -34,18 +34,20 @@ angular.module('starter', ['ionic', 'angularMoment'])
     url: '/',
     templateUrl: 'templates/events.html',
     controller: 'EventCtrl'
-  })
-  .state('agendas', {
-    url: '/agendas/:eventId',
-    templateUrl: 'templates/events.html',
-    controller: 'EventCtrl'
-  })
-  .state('map', {
-    url: '/map/:eventId',
-    templateUrl: 'templates/map.html',
-    controller: 'MapCtrl'
   });
+  // .state('agendas', {
+  //   url: '/agendas/:eventId',
+  //   templateUrl: 'templates/events.html',
+  //   controller: 'EventCtrl'
+  // });
 
   $urlRouterProvider.otherwise('/');
 
 });
+// .run(function($rootScope, $location, $anchorScroll, $routeParams) {
+
+//   $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+//     $location.hash($routeParams.scrollTo);
+//     $anchorScroll();
+//   });
+// });

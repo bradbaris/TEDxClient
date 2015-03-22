@@ -2711,7 +2711,7 @@ ion-infinite-scroll {
 
 /* If you change these, change platform.scss as well */
 .has-header {
-  top: 100px; /*HEIGHT*/ }
+  top: 44px; /*HEIGHT*/ }
 
 .no-header {
   top: 0; }
@@ -2772,8 +2772,8 @@ ion-infinite-scroll {
  * --------------------------------------------------
  */
 p {
-  /*margin: 0 0 10px;*/
-  margin: 16px 0; }
+  margin: 0 0 10px;
+  line-height: 1.75; }
 
 small {
   font-size: 85%; }
@@ -2794,14 +2794,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
   font-weight: 900;
   font-family: "Helvetica Neue", "Roboto", sans-serif;
-  line-height: 1.2; }
+  line-height: 1.3; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     font-weight: normal;
     line-height: 1; }
 
 h1, .h1, h2, .h2, h3, .h3 {
   margin-top: 20px;
-  margin-bottom: 10px; }
+  margin-bottom: 20px; }
   h1:first-child, .h1:first-child, h2:first-child, .h2:first-child, h3:first-child, .h3:first-child {
     margin-top: 0; }
   h1 + h1, h1 + .h1, h1 + h2, h1 + .h2, h1 + h3, h1 + .h3, .h1 + h1, .h1 + .h1, .h1 + h2, .h1 + .h2, .h1 + h3, .h1 + .h3, h2 + h1, h2 + .h1, h2 + h2, h2 + .h2, h2 + h3, h2 + .h3, .h2 + h1, .h2 + .h1, .h2 + h2, .h2 + .h2, .h2 + h3, .h2 + .h3, h3 + h1, h3 + .h1, h3 + h2, h3 + .h2, h3 + h3, h3 + .h3, .h3 + h1, .h3 + .h1, .h3 + h2, .h3 + .h2, .h3 + h3, .h3 + .h3 {
@@ -3446,7 +3446,7 @@ a.subdued {
   padding: 0; }
 
 .bar-subheader {
-  top: 100px; /*HEIGHT*/
+  top: 44px; /*HEIGHT*/
   display: block;
   height: 44px; }
 
@@ -4750,10 +4750,10 @@ ion-tabs.tabs-color-active-dark .tab-item {
     background-color: #262626; }
 
 .item, .item h1, .item h2, .item h3, .item h4, .item h5, .item h6, .item p, .item-content, .item-content h1, .item-content h2, .item-content h3, .item-content h4, .item-content h5, .item-content h6, .item-content p {
-  /*overflow: hidden;*/
-  /*text-overflow: ellipsis;*/
-  /*white-space: nowrap; */
-  /*word-break: break-all;*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+  word-break: break-all;
   }
 
 a.item {

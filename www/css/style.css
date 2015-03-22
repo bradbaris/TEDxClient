@@ -2,19 +2,54 @@
 
 .list .item.item-accordion {
   padding: 16px 74px;
-  transition: 0.09s all ease;
+  /*transition: 0.09s all ease;*/
 }
 .list .item.item-accordion.ng-hide {
-  line-height: 0px;
+  /*line-height: 0px;*/
 }
+
 .list .item.item-accordion.ng-hide-add,
 .list .item.item-accordion.ng-hide-remove {
-  display: block !important;
+  display: block;
 }
 
 /* ETC styles */
 html {
   background-image: url('../img/greyzz.png');
+}
+
+.main-event {
+  padding: 2em;
+}
+
+.full-agenda {
+  padding: 4em;
+}
+
+.footer {
+  height: 2000px;
+  background-color: red;
+}
+
+a.agenda-anchor {
+  text-decoration: none;
+}
+
+.bar {
+  height: 140px;
+}
+
+.bar-subheader {
+  top: 140px;
+}
+
+.has-header {
+  top: 140px;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
 }
 
 #map {
@@ -41,12 +76,6 @@ h2.bolder {
 
 h3.bolder{
   font-weight: normal;
-}
-
-p.contact{
-  font-size: 22px;
-  font-weight: normal;
-  color: #000000;
 }
 
 .horrible{
