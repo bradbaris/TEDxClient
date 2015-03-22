@@ -24,6 +24,10 @@
   color: #e62b1e;
 }
 
+.black {
+  color: #000;
+}
+
 .italic {
   font-style: italic;
 }
@@ -31,3 +35,8 @@
 h2.bolder {
   font-weight: 900;
 }
+
+h3.bolder{
+  font-weight: normal;
+}
+
