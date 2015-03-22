@@ -7,6 +7,7 @@ angular.module('starter')
 
       $scope.events = data;
 
+      //hardcoded value because app only uses 1 Event for now
       $scope.shown_event = data.filter(function (val) {
         return val._id === "55075690e4b018f3e291f7c1";
       })[0];

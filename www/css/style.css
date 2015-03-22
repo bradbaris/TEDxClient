@@ -2,10 +2,11 @@
 
 .list .item.item-accordion {
   padding: 16px 74px;
-  /*transition: 0.09s all ease;*/
+  line-height: 30px;
+  transition: 0.09s all ease;
 }
 .list .item.item-accordion.ng-hide {
-  /*line-height: 0px;*/
+  line-height: 0px;
 }
 
 .list .item.item-accordion.ng-hide-add,
@@ -24,11 +25,6 @@ html {
 
 .full-agenda {
   padding: 4em;
-}
-
-.footer {
-  height: 2000px;
-  background-color: red;
 }
 
 a.agenda-anchor {
@@ -66,16 +62,22 @@ a.agenda-anchor {
   color: #000;
 }
 
+.serif {
+  font-family: "Merriweather", "Georgia", "Baskerville", serif;
+}
+
 .italic {
   font-style: italic;
 }
 
 h2.bolder {
   font-weight: 900;
+  margin-bottom: 10px; 
 }
 
 h3.bolder{
   font-weight: normal;
+  margin-bottom: 10px;
 }
 
 .horrible{
