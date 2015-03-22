@@ -13,6 +13,9 @@
 }
 
 /* ETC styles */
+html {
+  background-image: url('../img/greyzz.png');
+}
 
 #map {
   width: 100%;
@@ -38,5 +41,16 @@ h2.bolder {
 
 h3.bolder{
   font-weight: normal;
+}
+
+p.contact{
+  font-size: 22px;
+  font-weight: normal;
+  color: #000000;
+}
+
+.horrible{
+  max-width: 768px;
+  margin: auto;
 }
 
