@@ -18,7 +18,7 @@
             </h1>
 
             <h2 class="red bolder">{{event.start_date | amDateFormat:'dddd, MMMM Do'}} &bull; {{event.start_time}} - {{event.end_time}}</h2>
-            <h2 ng-bind-html="event.description | parseTedX"></h2>
+            <p ng-bind-html="event.description | parseTedX"></p>
           </div>
 
           <div class="item-accordion" ng-show="isAgendaShown(event)">
