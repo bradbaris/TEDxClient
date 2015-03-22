@@ -61,7 +61,7 @@
 
       <div ng-repeat="agenda in agendas | orderBy: 'timestamp'">
 
-        <div class="list card" ng-click="toggleAgenda(agenda)" ng-class="{active: isAgendaShown(agenda)}">
+        <div ng-click="toggleAgenda(agenda)" ng-class="{active: isAgendaShown(agenda)}">
           <div ng-hide="isAgendaShown(agenda)">
             <div class="item-avatar item item-icon-right">
               <img src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
