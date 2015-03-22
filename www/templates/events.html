@@ -61,21 +61,24 @@
       <div ng-repeat="agenda in agendas | orderBy: 'timestamp'">
 
         <div class="list card" ng-click="toggleAgenda(agenda)" ng-class="{active: isAgendaShown(agenda)}">
+          <div ng-hide="isAgendaShown(agenda)">
+            <div class="item-avatar item item-icon-right">
+              <img src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
 
-          <div class="item-avatar item item-icon-right">
+              <h2 class="bolder" ng-bind-html="agenda.title | parseTedX"> {{agenda.start_time}}</h2>
+              <h3 class="bolder" ng-bind-html="agenda.speaker | parseTedX"> {{agenda.start_time}}</h3>
+              <h3 class="red">{{agenda.date | amDateFormat:'dddd, MMMM Do'}} &bull; {{shown_event.start_time}} - {{shown_event.end_time}}</h3>
+              <i class="icon icon-accessory" ng-class="isAgendaShown(agenda) ? 'ion-close' : 'ion-chevron-down'"></i>
+            </div>
+          
 
-            <img src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
-
-            <h2 class="bolder" ng-bind-html="agenda.title | parseTedX"> {{agenda.start_time}}</h2>
-            <h3 class="bolder" ng-bind-html="agenda.speaker | parseTedX"> {{agenda.start_time}}</h3>
-            <h3 class="red">{{agenda.date | amDateFormat:'dddd, MMMM Do'}} &bull; {{shown_event.start_time}} - {{shown_event.end_time}}</h3>
-            <i class="icon icon-accessory" ng-class="isAgendaShown(agenda) ? 'ion-close' : 'ion-chevron-down'"></i>
-          </div>
+          </div> 
 
           <div class="item-body" ng-show="isAgendaShown(agenda)">
             <img class="full-image" src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
-            <h1>{{agenda.date | amDateFormat:'dddd, MMMM Do'}} <sup class="red">&times;</sup> {{agenda.start_time}} - {{agenda.end_time}}</h1>
-            <h2 class="red">{{agenda.speaker}}</h2>
+            <h1>{{agenda.title}}</h1>
+            <h3>{{agenda.date | amDateFormat:'dddd, MMMM Do'}} <sup class="red">&times;</sup> {{agenda.start_time}} - {{agenda.end_time}}</h3>
+            <h3 class="red">{{agenda.speaker}}</h3>
             <p ng-bind-html="agenda.description | parseTedX"></p>
           </div>
 

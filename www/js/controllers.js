@@ -38,6 +38,7 @@ angular.module('starter')
       }
     };
 
+
     $scope.toggleEvent = function(event) {
       $scope.shown_event = event;
       $scope.agendas = $scope.all_agendas.filter(function(val) {
