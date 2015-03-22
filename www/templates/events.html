@@ -15,7 +15,6 @@
           <div class="item-accordion item-body" ng-click="toggleEvent(event)" ng-class="{active: isAgendaShown(event)}">
 
             <h1 ng-bind-html="event.title | parseTedX">
-              <!--baller move -->
             </h1>
 
             <h2 class="red bolder">{{event.start_date | amDateFormat:'dddd, MMMM Do'}} &bull; {{event.start_time}} - {{event.end_time}}</h2>
@@ -32,8 +31,8 @@
 
         <!-- GOOGLE MAP SNIPPET -->
         <ion-item id="#map" class="item-image">
-          <a ng-bind-himtl-unsafe="" href="geo:{{event.lat}},{{event.lng}}">
-            <img src="https://maps.googleapis.com/maps/api/staticmap?center={{event.lat}},{{event.lng}}&size=700x300&scale=2&zoom=17&markers=icon:http://tedx.devleague.com/img/tedxmap.png|color:red|{{event.lat}},{{event.lng}}" />
+          <a ng-bind-himtl-unsafe="" href="map:{{event.lat}},{{event.lng}}">
+            <img src="https://maps.googleapis.com/maps/api/staticmap?center={{event.lat}},{{event.lng}}&size=640x200&zoom=17&markers=icon:http://tedx.devleague.com/img/tedxmap.png|color:red|{{event.lat}},{{event.lng}}" />
           </a>
         </ion-item>
       </div>
