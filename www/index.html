@@ -6,10 +6,11 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <meta name="viewport" content="width=590">
     <meta name="mobile-web-app-capable" content="yes" />
-    <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <title>TEDx Honolulu</title>
+    <link rel="stylesheet" type="text/css" href="css/addtohomescreen.css">
     <link href="css/ionic.app.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -45,7 +46,10 @@
     <script src="js/moment.min.js"></script>
     <script src="js/angular-moment.min.js"></script>
     <script src="js/filters.js"></script>
-
+    <script src="js/addtohomescreen.min.js"></script>
+    <script>
+      addToHomescreen();
+    </script>
   </head>
   <body ng-app="starter" class="horrible">
     <div id="main-container">
