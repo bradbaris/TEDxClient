@@ -2,10 +2,10 @@
 <widget id="com.ionicframework.tedxclient101473" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>TEDx Honolulu</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Application to show speaker information for TEDx Honolulu conference.
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="tedxhonolulu2015app@gmail.com" href="http://www.devleague.com/">
+      Devleague Cohort 4
     </author>
   <content src="index.html"/>
   <access origin="*"/>
