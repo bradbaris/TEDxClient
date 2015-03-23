@@ -2,19 +2,50 @@
 
 .list .item.item-accordion {
   padding: 16px 74px;
+  line-height: 30px;
   transition: 0.09s all ease;
 }
 .list .item.item-accordion.ng-hide {
   line-height: 0px;
 }
+
 .list .item.item-accordion.ng-hide-add,
 .list .item.item-accordion.ng-hide-remove {
-  display: block !important;
+  display: block;
 }
 
 /* ETC styles */
 html {
   background-image: url('../img/greyzz.png');
+}
+
+.main-event {
+  padding: 2em;
+}
+
+.full-agenda {
+  padding: 4em;
+}
+
+a.agenda-anchor {
+  text-decoration: none;
+}
+
+.bar {
+  height: 140px;
+}
+
+.bar-subheader {
+  top: 140px;
+}
+
+.has-header {
+  top: 140px;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
 }
 
 #map {
@@ -31,22 +62,22 @@ html {
   color: #000;
 }
 
+.serif {
+  font-family: "Merriweather", "Georgia", "Baskerville", serif;
+}
+
 .italic {
   font-style: italic;
 }
 
 h2.bolder {
   font-weight: 900;
+  margin-bottom: 10px; 
 }
 
 h3.bolder{
   font-weight: normal;
-}
-
-p.contact{
-  font-size: 22px;
-  font-weight: normal;
-  color: #000000;
+  margin-bottom: 10px;
 }
 
 .horrible{
