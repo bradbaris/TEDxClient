@@ -20,7 +20,8 @@
             <h2 class="red bolder">{{event.start_date | amDateFormat:'dddd, MMMM Do'}} &bull; {{event.start_time}} - {{event.end_time}}</h2>
 
             <p class="black" ng-bind-html="event.description | parseTedX">
-              <p><b>Contact</b> &bull; {{event.eventOrganizer}} &bull; {{event.email}} &bull; {{event.phone}}
+            <p><b>Contact</b> &bull; {{event.eventOrganizer}} &bull; {{event.email}} &bull; <a href="tel:{{event.phone}}">{{event.phone}}</a>
+
             </p>
           </div>
 
