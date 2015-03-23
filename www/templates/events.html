@@ -15,7 +15,7 @@
 
           <div class="item-accordion" ng-click="toggleEvent(event)" ng-class="{active: isAgendaShown(event)}">
 
-            <h1 ng-bind-html="event.title | parseTedX"></h1>
+            <h1 data-fittext ng-bind-html="event.title | parseTedX"></h1>
 
             <h2 class="red bolder">{{event.start_date | amDateFormat:'dddd, MMMM Do'}} &bull; {{event.start_time}} - {{event.end_time}}</h2>
 
@@ -36,7 +36,7 @@
         <!-- GOOGLE MAP SNIPPET -->
         <ion-item id="#map" class="item-image">
           <a ng-bind-html-unsafe="" href="map:{{event.lat}},{{event.lng}}">
-            <img src="https://maps.googleapis.com/maps/api/staticmap?center={{event.lat}},{{event.lng}}&size=640x200&zoom=17&markers=icon:http://tedx.devleague.com/img/tedxmap.png|color:red|{{event.lat}},{{event.lng}}" />
+            <img src="https://maps.googleapis.com/maps/api/staticmap?center={{event.lat}},{{event.lng}}&size=640x350&zoom=17&markers=icon:http://tedx.devleague.com/img/tedxmap_ol.png|color:red|{{event.lat}},{{event.lng}}" />
           </a>
         </ion-item>
       </div>
@@ -61,7 +61,7 @@
             <div class="item-avatar item item-icon-right">
               <img src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
 
-              <h2 class="bolder" ng-bind-html="agenda.title | parseTedX"> {{agenda.start_time}}as dfasdf</h2>
+              <h2 class="bolder" ng-bind-html="agenda.title | parseTedX"> {{agenda.start_time}}</h2>
               <h3 class="bolder" ng-bind-html="agenda.speaker | parseTedX"> {{agenda.speaker}}</h3>
               <h3 class="red">{{agenda.date | amDateFormat:'dddd, MMMM Do'}} &bull; {{agenda.start_time}} - {{agenda.end_time}}</h3>
               <i class="icon icon-accessory ion-chevron-down"></i>
@@ -70,8 +70,11 @@
           </div>
 
           <div class="item-body full-agenda" ng-show="isAgendaShown(agenda)">
+            <p class="center">
+              <i class="icon ion-close"></i>
+            </p>
             <img class="full-image" src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
-            <h1 class="serif">{{agenda.title}}</h1>
+            <h1 data-fittext class="serif">{{agenda.title}}</h1>
             <h3>{{agenda.date | amDateFormat:'dddd, MMMM Do'}} <sup class="red">&times;</sup> {{agenda.start_time}} - {{agenda.end_time}}</h3>
             <h3 class="red">{{agenda.speaker}}</h3>
             <p ng-bind-html="agenda.description | parseTedX"></p>
