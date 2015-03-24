@@ -27,6 +27,11 @@ html {
   padding: 4em;
 }
 
+.spacer {
+  height: 2000px;
+  min-height: 2000px;
+}
+
 a.agenda-anchor {
   text-decoration: none;
 }

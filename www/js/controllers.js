@@ -1,6 +1,9 @@
 angular.module('starter')
 
-  .controller('EventCtrl', ['$scope', 'Events', 'Agendas', '$location', '$anchorScroll', '$ionicScrollDelegate', function( $scope, Events, Agendas, $location, $anchorScroll, $ionicScrollDelegate ) {
+  .run(['$anchorScroll', function($anchorScroll) {
+    $anchorScroll.yOffset = 400;   // always scroll by 140 extra pixels
+  }])
+  .controller('EventCtrl', ['$scope', 'Events', 'Agendas', '$location', '$anchorScroll', '$ionicScrollDelegate', '$timeout', function( $scope, Events, Agendas, $location, $anchorScroll, $ionicScrollDelegate, $timeout ) {
 
     // Events.list().success(callback);
     Events.get().success(function (data) {
@@ -45,12 +48,13 @@ angular.module('starter')
         $scope.shownAgenda = null;
         $location.hash('');
       } else {
+        $scope.shownAgenda = null; //reset to base doc y-height
         $scope.shownAgenda = agenda;
-        agendaId = $location.hash(agendaId);
-        setTimeout(function() {
-          $ionicScrollDelegate.$getByHandle('containerScroll').$resize().$anchorScroll(agendaId);
-          console.log("SCROLLING TO ", agendaId.$$hash);
-        }, 0);
+        $timeout(function() {
+          $location.hash(agendaId);
+          $ionicScrollDelegate.$getByHandle('containerScroll').anchorScroll();
+          // console.log("scrolling to ", agendaId);
+        }, 20);
       }
     };
 
