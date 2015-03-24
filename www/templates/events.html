@@ -20,7 +20,7 @@
             <h2 class="red bolder">{{event.start_date | amDateFormat:'dddd, MMMM Do'}} &bull; {{event.start_time}} - {{event.end_time}}</h2>
 
             <p class="black" ng-bind-html="event.description | parseTedX">
-            <p><b>Contact</b> &bull; {{event.eventOrganizer}} &bull; {{event.email}} &bull; <a href="tel:{{event.phone}}">{{event.phone}}</a>
+            <p><b>Contact</b> &bull; {{event.eventOrganizer}} &bull; {{event.email}} &bull; <a href="tel:{{event.phone | phoneNum}}" ng-bind-html="event.phone"></a>
 
             </p>
           </div>
@@ -36,7 +36,7 @@
 
         <!-- GOOGLE MAP SNIPPET -->
         <ion-item id="#map" class="item-image">
-          <a ng-bind-html-unsafe="" href="map:{{event.lat}},{{event.lng}}">
+          <a href="map:{{event.lat}},{{event.lng}}">
             <img src="https://maps.googleapis.com/maps/api/staticmap?center={{event.lat}},{{event.lng}}&size=640x350&zoom=17&markers=icon:http://tedx.devleague.com/img/tedxmap_ol.png|color:red|{{event.lat}},{{event.lng}}" />
           </a>
         </ion-item>
@@ -71,9 +71,9 @@
           </div>
 
           <div class="item-body full-agenda" ng-show="isAgendaShown(agenda)">
-            <p class="center">
-              <i class="icon ion-close"></i>
-            </p>
+            <h4 class="center icon ion-close-circled"></h4>
+            <br />
+
             <img class="full-image" src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
             <h1 data-fittext ng-bind-html="agenda.title | parseTedX | widowFix" class="serif">
               
@@ -81,9 +81,7 @@
             <h3>{{agenda.date | amDateFormat:'dddd, MMMM Do'}} <sup class="red">&times;</sup> {{agenda.start_time}} - {{agenda.end_time}}</h3>
             <h3 class="red">{{agenda.speaker}}</h3>
             <p ng-bind-html="agenda.description | parseTedX"></p>
-            <p class="center">
-              <i class="icon ion-close"></i>
-            </p>
+            <h4 class="center icon ion-close-circled"></h4>
           </div>
 
         </div>

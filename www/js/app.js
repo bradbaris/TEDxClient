@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'angularMoment'])
 .config( [
   '$compileProvider',
   function( $compileProvider ) {
-    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|geo|map|maps):/);
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|callto|geo|map|maps):/);
     // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
   }
 ])

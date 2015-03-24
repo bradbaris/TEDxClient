@@ -3,11 +3,12 @@
 .list .item.item-accordion {
   padding: 16px 74px;
   line-height: 30px;
-  transition: 0.09s all ease;
-}
-.list .item.item-accordion.ng-hide {
+  transition-property: all;
+  transition-duration: 2s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);}
+/*.list .item.item-accordion.ng-hide {
   line-height: 0px;
-}
+}*/
 
 .list .item.item-accordion.ng-hide-add,
 .list .item.item-accordion.ng-hide-remove {
@@ -25,6 +26,7 @@ html {
 
 .full-agenda {
   padding: 4em;
+  padding-top: 2em;
 }
 
 .spacer {

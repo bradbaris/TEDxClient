@@ -13,4 +13,14 @@ angular.module('starter')
       text.trim();
       return text.replace(widowCapture, '&nbsp;');
     };
+})
+
+  .filter('phoneNum', function () {
+    var notNumbers = /\D/g;
+    return function (text) {
+      var numbers = text.replace(notNumbers, '');
+      var callCode = "1"; //normally 011 for USA calls
+      callCode += numbers;
+      return callCode;
+    };
 });
