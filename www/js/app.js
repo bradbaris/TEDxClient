@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'angularMoment'])
 .config( [
   '$compileProvider',
   function( $compileProvider ) {
-    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|geo|map|maps):/);
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|callto|geo|map|maps):/);
     // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
   }
 ])
@@ -34,17 +34,12 @@ angular.module('starter', ['ionic', 'angularMoment'])
     url: '/',
     templateUrl: 'templates/events.html',
     controller: 'EventCtrl'
-  })
-  .state('agendas', {
-    url: '/agendas/:eventId',
-    templateUrl: 'templates/events.html',
-    controller: 'EventCtrl'
-  })
-  .state('map', {
-    url: '/map/:eventId',
-    templateUrl: 'templates/map.html',
-    controller: 'MapCtrl'
   });
+  // .state('agendas', {
+  //   url: '/agendas/:eventId',
+  //   templateUrl: 'templates/events.html',
+  //   controller: 'EventCtrl'
+  // });
 
   $urlRouterProvider.otherwise('/');
 
