@@ -6,6 +6,10 @@ html {
   padding: 2em;
 }
 
+.main-event h1 {
+  line-height: 44px;
+}
+
 .full-agenda {
   padding: 4em;
   padding-top: 2em;

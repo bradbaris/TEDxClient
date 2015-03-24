@@ -15,7 +15,7 @@
 
           <div ng-click="toggleEvent(event)" ng-class="{active: isAgendaShown(event)}">
 
-            <h1 data-fittext ng-bind-html="event.title | parseTedX | widowFix"></h1>
+            <h1 data-fittext data-fittext-min="36" ng-bind-html="event.title | parseTedX | widowFix"></h1>
 
             <h2 class="red bolder">{{event.start_date | amDateFormat:'dddd, MMMM Do'}} &bull; {{event.start_time}} - {{event.end_time}}</h2>
 
@@ -62,8 +62,8 @@
             <div class="item-avatar item item-icon-right">
               <img src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
 
-              <h2 class="bolder" ng-bind-html="agenda.title | parseTedX"></h2>
-              <h3 class="bolder" ng-bind-html="agenda.speaker | parseTedX"></h3>
+              <h2 class="bolder" data-fittext ng-bind-html="agenda.title | parseTedX"></h2>
+              <h3 class="bolder" data-fittext ng-bind-html="agenda.speaker | parseTedX"></h3>
               <h3 class="red">{{agenda.date | amDateFormat:'dddd, MMMM Do'}}</h3>
               <h3 class="red">{{agenda.start_time}} - {{agenda.end_time}}</h3>
               <i class="icon icon-accessory ion-chevron-down"></i>
