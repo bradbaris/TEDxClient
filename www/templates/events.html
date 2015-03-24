@@ -13,7 +13,7 @@
       <div ng-repeat="event in events">
         <ion-item class="item-body main-event">
 
-          <div class="item-accordion" ng-click="toggleEvent(event)" ng-class="{active: isAgendaShown(event)}">
+          <div ng-click="toggleEvent(event)" ng-class="{active: isAgendaShown(event)}">
 
             <h1 data-fittext ng-bind-html="event.title | parseTedX | widowFix"></h1>
 
@@ -57,7 +57,7 @@
     <ion-list>
 
       <div ng-repeat="agenda in agendas | orderBy: 'timestamp'">
-        <div id="{{agenda._id}}" ng-click="toggleAgenda(agenda, agenda._id)" ng-class="{active: isAgendaShown(agenda)}">
+        <div id="{{agenda._id}}" ng-click="toggleAgenda(agenda, agenda._id)">
           <div ng-hide="isAgendaShown(agenda)">
             <div class="item-avatar item item-icon-right">
               <img src="http://tedx-api.devleague.com/uploads/{{agenda.image_name}}">
@@ -86,10 +86,8 @@
 
         </div>
       </div>
-      <div class="spacer">
-       &nbsp;
-      </div>
-
+    <div class="bar spacer">
+    </div>
     </ion-list>
 
   </ion-content>

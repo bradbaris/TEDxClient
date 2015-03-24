@@ -53,7 +53,6 @@ angular.module('starter')
         $timeout(function() {
           $location.hash(agendaId);
           $ionicScrollDelegate.$getByHandle('containerScroll').anchorScroll();
-          // console.log("scrolling to ", agendaId);
         }, 20);
       }
     };
