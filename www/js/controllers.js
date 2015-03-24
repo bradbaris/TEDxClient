@@ -47,9 +47,8 @@ angular.module('starter')
       } else {
         $scope.shownAgenda = agenda;
         agendaId = $location.hash(agendaId);
-        // $anchorScroll(agendaId);
         setTimeout(function() {
-          $ionicScrollDelegate.$getByHandle('containerScroll').anchorScroll(agendaId);
+          $ionicScrollDelegate.$getByHandle('containerScroll').$resize().$anchorScroll(agendaId);
           console.log("SCROLLING TO ", agendaId.$$hash);
         }, 0);
       }

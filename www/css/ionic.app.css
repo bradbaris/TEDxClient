@@ -2711,7 +2711,7 @@ ion-infinite-scroll {
 
 /* If you change these, change platform.scss as well */
 .has-header {
-  top: 44px; /*HEIGHT*/ }
+  top: 140px; /*HEIGHT*/ }
 
 .no-header {
   top: 0; }
