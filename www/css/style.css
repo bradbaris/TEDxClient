@@ -26,15 +26,15 @@ a.agenda-anchor {
 }
 
 .bar {
-  height: 140px;
+  height: 100px;
 }
 
 .bar-subheader {
-  top: 140px;
+  top: 100px;
 }
 
 .has-header {
-  top: 140px;
+  top: 100px;
 }
 
 .center {
@@ -62,10 +62,6 @@ a.agenda-anchor {
 
 .italic {
   font-style: italic;
-}
-
-h1 {
-  font-size: 35px;
 }
 
 h2.bolder {
