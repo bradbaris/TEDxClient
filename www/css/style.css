@@ -60,6 +60,10 @@ a.agenda-anchor {
   font-style: italic;
 }
 
+h1 {
+  font-size: 35px;
+}
+
 h2.bolder {
   font-weight: 900;
 }
