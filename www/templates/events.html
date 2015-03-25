@@ -21,8 +21,9 @@
 
             <p class="black" ng-bind-html="event.description | parseTedX">
             <p><b>Contact</b> &bull; {{event.eventOrganizer}} &bull; {{event.email}} &bull; <a href="tel:{{event.phone | phoneNum}}" ng-bind-html="event.phone"></a>
-
             </p>
+            <a href="{{event.twitter}}"><h3 class="icon ion-social-twitter social-media"></h3></a>
+            <a href="{{event.facebook}}"><h2 class="icon ion-social-facebook social-media"></h2></a>
           </div>
 
           <!-- for future EVENTS (>1 event) -->
@@ -81,7 +82,11 @@
             <h3>{{agenda.date | amDateFormat:'dddd, MMMM Do'}} <sup class="red">&times;</sup> {{agenda.start_time}} - {{agenda.end_time}}</h3>
             <h3 class="red">{{agenda.speaker}}</h3>
             <p ng-bind-html="agenda.description | parseTedX"></p>
+            <a href="{{agenda.twitter}}"><h3 class="icon ion-social-twitter social-media"></h3></a>
+            <a href="{{agenda.facebook}}"><h3 class="icon ion-social-facebook social-media"></h3></a>
+            <a href="{{agenda.linkedin}}"><h3 class="icon ion-social-linkedin social-media"></h3></a>
             <h4 class="center icon ion-close-circled"></h4>
+
           </div>
 
         </div>
