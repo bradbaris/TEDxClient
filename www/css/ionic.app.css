@@ -2564,7 +2564,7 @@ body, .ionic-body {
   margin: 0;
   padding: 0;
   color: #000;
-  word-wrap: break-word;
+  /*word-wrap: break-word;*/
   font-size: 15px;
   font-family: "Merriweather", "Helvetica Neue", "Roboto", "Helvetica", "Arial", sans-serif;
   line-height: 24px;
