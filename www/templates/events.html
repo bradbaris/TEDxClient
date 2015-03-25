@@ -81,7 +81,11 @@
             <h3>{{agenda.date | amDateFormat:'dddd, MMMM Do'}} <sup class="red">&times;</sup> {{agenda.start_time}} - {{agenda.end_time}}</h3>
             <h3 class="red">{{agenda.speaker}}</h3>
             <p ng-bind-html="agenda.description | parseTedX"></p>
+            <h3 class="icon ion-social-twitter social-media"></h3>
+            <h3 class="icon ion-social-facebook social-media"></h3>
+            <h3 class="icon ion-social-linkedin social-media"></h3>
             <h4 class="center icon ion-close-circled"></h4>
+
           </div>
 
         </div>
