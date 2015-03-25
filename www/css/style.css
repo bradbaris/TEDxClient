@@ -3,11 +3,11 @@ html {
 }
 
 .main-event {
-  padding: 2em;
+  padding: 2em 3em;
 }
 
 .main-event h1 {
-  line-height: 44px;
+  line-height: 36px;
 }
 
 .full-agenda {
@@ -25,6 +25,15 @@ a.agenda-anchor {
   text-decoration: none;
 }
 
+h2.bolder {
+  font-weight: 900;
+}
+
+h3.bolder{
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
 .bar {
   height: 100px;
 }
@@ -35,6 +44,11 @@ a.agenda-anchor {
 
 .has-header {
   top: 100px;
+}
+
+.titleImage {
+  width: 340px;
+  height: auto;
 }
 
 .center {
@@ -62,15 +76,6 @@ a.agenda-anchor {
 
 .italic {
   font-style: italic;
-}
-
-h2.bolder {
-  font-weight: 900;
-}
-
-h3.bolder{
-  font-weight: normal;
-  margin-bottom: 10px;
 }
 
 .horrible{
