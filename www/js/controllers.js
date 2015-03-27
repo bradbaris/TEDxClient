@@ -73,4 +73,24 @@ angular.module('starter')
         window.open("http://maps.google.com/maps?q=loc:"+lat+"+"+lng);
     };
 
+    $scope.twitterEvent = function (event) {
+      window.open(event.twitter,'_blank','location=no');return false;
+    };
+
+    $scope.facebookEvent = function (event) {
+      window.open(event.facebook,'_blank','location=no');return false;
+    };
+
+    $scope.twitterAgenda = function (agenda) {
+      window.open(agenda.twitter,'_blank','location=no');return false;
+    };
+
+    $scope.facebookAgenda = function (agenda) {
+      window.open(agenda.facebook,'_blank','location=no');return false;
+    };
+
+    $scope.linkedinAgenda = function (agenda) {
+      window.open(agenda.linkedin,'_blank','location=no');return false;
+    };
+
   }]);
