@@ -67,10 +67,10 @@ angular.module('starter')
     $scope.launchMapUa = function(lat,lng){
       if( (navigator.platform.indexOf("iPhone") != -1) || (navigator.platform.indexOf("iPod") != -1) || (navigator.platform.indexOf("iPad") != -1))
         // iphone/ipad/ipod
-        window.open("maps://maps.google.com/maps?q=loc:"+lat+"+"+lng);
+        window.open("maps://maps.google.com/maps?q=loc:"+lat+"+"+lng, '_blank', 'location=no');
       else
         // everything else (Android, desktops)
-        window.open("http://maps.google.com/maps?q=loc:"+lat+"+"+lng);
+        window.open("http://maps.google.com/maps?q=loc:"+lat+"+"+lng, '_blank', 'location=no');
     };
 
     $scope.twitterEvent = function (event) {
