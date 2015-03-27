@@ -22,7 +22,7 @@
             <p class="black" ng-bind-html="event.description | parseTedX">
             <p><b>Contact</b> &bull; {{event.eventOrganizer}} &bull; {{event.email}} &bull; <a href="tel:{{event.phone | phoneNum}}" ng-bind-html="event.phone"></a>
             </p>
-            <a href="#" onclick="window.open('{{event.twitter}}', '_system');"><h3 class="icon ion-social-twitter social-media"></h3></a>
+            <a href="{{event.twitter}}"><h3 class="icon ion-social-twitter social-media"></h3></a>
             <a href="{{event.facebook}}"><h2 class="icon ion-social-facebook social-media"></h2></a>
           </div>
 
