@@ -59,7 +59,18 @@ angular.module('starter')
 
     // helper func, assigns 'agenda' to currently-open agenda
     $scope.isAgendaShown = function(agenda){
+      console.log($scope.shownAgenda);
       return $scope.shownAgenda === agenda;
+    };
+
+    //http://maps.google.com/maps?q=loc:21.298469+-157.818713
+    $scope.launchMapUa = function(lat,lng){
+      if( (navigator.platform.indexOf("iPhone") != -1) || (navigator.platform.indexOf("iPod") != -1) || (navigator.platform.indexOf("iPad") != -1))
+        // iphone/ipad/ipod
+        window.open("maps://maps.google.com/maps?q=loc:"+lat+"+"+lng);
+      else
+        // everything else (Android, desktops)
+        window.open("http://maps.google.com/maps?q=loc:"+lat+"+"+lng);
     };
 
   }]);
